@@ -1,0 +1,6 @@
+framework module Pods_PokerEvaluatorTests {
+  umbrella header "Pods-PokerEvaluatorTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

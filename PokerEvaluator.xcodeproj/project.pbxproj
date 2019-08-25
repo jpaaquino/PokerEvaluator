@@ -1,0 +1,742 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E10FC739B535AB607DD0C0F /* Pods_PokerEvaluator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8FD263F16270249EBDFED0 /* Pods_PokerEvaluator.framework */; };
+		3F89DCFB231311C600394DD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DCFA231311C600394DD8 /* AppDelegate.swift */; };
+		3F89DCFF231311C600394DD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DCFE231311C600394DD8 /* ViewController.swift */; };
+		3F89DD02231311C600394DD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F89DD00231311C600394DD8 /* Main.storyboard */; };
+		3F89DD04231311C800394DD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F89DD03231311C800394DD8 /* Assets.xcassets */; };
+		3F89DD07231311C800394DD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F89DD05231311C800394DD8 /* LaunchScreen.storyboard */; };
+		3F89DD12231311C800394DD8 /* PokerEvaluatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DD11231311C800394DD8 /* PokerEvaluatorTests.swift */; };
+		3F89DD1D231311C800394DD8 /* PokerEvaluatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DD1C231311C800394DD8 /* PokerEvaluatorUITests.swift */; };
+		3F89DD3B23131BA900394DD8 /* Lookups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DD3A23131BA900394DD8 /* Lookups.swift */; };
+		3F89DD3D23131BB200394DD8 /* Evaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DD3C23131BB200394DD8 /* Evaluator.swift */; };
+		3F89DD3F23131C1700394DD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DD3E23131C1700394DD8 /* SceneDelegate.swift */; };
+		A83F29A90E5D659A4F5B876F /* Pods_PokerEvaluatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0582B957F0200FFA54D40AEC /* Pods_PokerEvaluatorTests.framework */; };
+		D077F2FB14D164E8C0A468DE /* Pods_PokerEvaluatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 567555D7F3F86210B7299A5F /* Pods_PokerEvaluatorUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F89DD0E231311C800394DD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F89DCEF231311C600394DD8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F89DCF6231311C600394DD8;
+			remoteInfo = PokerEvaluator;
+		};
+		3F89DD19231311C800394DD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F89DCEF231311C600394DD8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F89DCF6231311C600394DD8;
+			remoteInfo = PokerEvaluator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		040662FFB482EBEF68CF0EE8 /* Pods-PokerEvaluator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerEvaluator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokerEvaluator/Pods-PokerEvaluator.debug.xcconfig"; sourceTree = "<group>"; };
+		0582B957F0200FFA54D40AEC /* Pods_PokerEvaluatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokerEvaluatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F89DCF7231311C600394DD8 /* PokerEvaluator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerEvaluator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F89DCFA231311C600394DD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F89DCFE231311C600394DD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F89DD01231311C600394DD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F89DD03231311C800394DD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F89DD06231311C800394DD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F89DD08231311C800394DD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F89DD0D231311C800394DD8 /* PokerEvaluatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokerEvaluatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F89DD11231311C800394DD8 /* PokerEvaluatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerEvaluatorTests.swift; sourceTree = "<group>"; };
+		3F89DD13231311C800394DD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F89DD18231311C800394DD8 /* PokerEvaluatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokerEvaluatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F89DD1C231311C800394DD8 /* PokerEvaluatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerEvaluatorUITests.swift; sourceTree = "<group>"; };
+		3F89DD1E231311C800394DD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F89DD3A23131BA900394DD8 /* Lookups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lookups.swift; sourceTree = "<group>"; };
+		3F89DD3C23131BB200394DD8 /* Evaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evaluator.swift; sourceTree = "<group>"; };
+		3F89DD3E23131C1700394DD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		567555D7F3F86210B7299A5F /* Pods_PokerEvaluatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokerEvaluatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		584C2E4BE931FAF6816124D1 /* Pods-PokerEvaluatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerEvaluatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokerEvaluatorTests/Pods-PokerEvaluatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE8FD263F16270249EBDFED0 /* Pods_PokerEvaluator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokerEvaluator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF5DCDE7668524D7933274BF /* Pods-PokerEvaluatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerEvaluatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokerEvaluatorUITests/Pods-PokerEvaluatorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CCCC6D703A66FF4C8B9F44E1 /* Pods-PokerEvaluator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerEvaluator.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokerEvaluator/Pods-PokerEvaluator.release.xcconfig"; sourceTree = "<group>"; };
+		F6D30282B80E117FBFA294E3 /* Pods-PokerEvaluatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerEvaluatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokerEvaluatorUITests/Pods-PokerEvaluatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF901521D05CAC5B5026E848 /* Pods-PokerEvaluatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerEvaluatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokerEvaluatorTests/Pods-PokerEvaluatorTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F89DCF4231311C600394DD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E10FC739B535AB607DD0C0F /* Pods_PokerEvaluator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F89DD0A231311C800394DD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A83F29A90E5D659A4F5B876F /* Pods_PokerEvaluatorTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F89DD15231311C800394DD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D077F2FB14D164E8C0A468DE /* Pods_PokerEvaluatorUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D198D93F1D45261A7D0A6E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE8FD263F16270249EBDFED0 /* Pods_PokerEvaluator.framework */,
+				0582B957F0200FFA54D40AEC /* Pods_PokerEvaluatorTests.framework */,
+				567555D7F3F86210B7299A5F /* Pods_PokerEvaluatorUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F89DCEE231311C600394DD8 = {
+			isa = PBXGroup;
+			children = (
+				3F89DCF9231311C600394DD8 /* PokerEvaluator */,
+				3F89DD10231311C800394DD8 /* PokerEvaluatorTests */,
+				3F89DD1B231311C800394DD8 /* PokerEvaluatorUITests */,
+				3F89DCF8231311C600394DD8 /* Products */,
+				5544CBC70F99488F82BC54A8 /* Pods */,
+				1D198D93F1D45261A7D0A6E8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F89DCF8231311C600394DD8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F89DCF7231311C600394DD8 /* PokerEvaluator.app */,
+				3F89DD0D231311C800394DD8 /* PokerEvaluatorTests.xctest */,
+				3F89DD18231311C800394DD8 /* PokerEvaluatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F89DCF9231311C600394DD8 /* PokerEvaluator */ = {
+			isa = PBXGroup;
+			children = (
+				3F89DD3E23131C1700394DD8 /* SceneDelegate.swift */,
+				3F89DCFA231311C600394DD8 /* AppDelegate.swift */,
+				3F89DCFE231311C600394DD8 /* ViewController.swift */,
+				3F89DD3A23131BA900394DD8 /* Lookups.swift */,
+				3F89DD3C23131BB200394DD8 /* Evaluator.swift */,
+				3F89DD00231311C600394DD8 /* Main.storyboard */,
+				3F89DD03231311C800394DD8 /* Assets.xcassets */,
+				3F89DD05231311C800394DD8 /* LaunchScreen.storyboard */,
+				3F89DD08231311C800394DD8 /* Info.plist */,
+			);
+			path = PokerEvaluator;
+			sourceTree = "<group>";
+		};
+		3F89DD10231311C800394DD8 /* PokerEvaluatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F89DD11231311C800394DD8 /* PokerEvaluatorTests.swift */,
+				3F89DD13231311C800394DD8 /* Info.plist */,
+			);
+			path = PokerEvaluatorTests;
+			sourceTree = "<group>";
+		};
+		3F89DD1B231311C800394DD8 /* PokerEvaluatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3F89DD1C231311C800394DD8 /* PokerEvaluatorUITests.swift */,
+				3F89DD1E231311C800394DD8 /* Info.plist */,
+			);
+			path = PokerEvaluatorUITests;
+			sourceTree = "<group>";
+		};
+		5544CBC70F99488F82BC54A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				040662FFB482EBEF68CF0EE8 /* Pods-PokerEvaluator.debug.xcconfig */,
+				CCCC6D703A66FF4C8B9F44E1 /* Pods-PokerEvaluator.release.xcconfig */,
+				584C2E4BE931FAF6816124D1 /* Pods-PokerEvaluatorTests.debug.xcconfig */,
+				FF901521D05CAC5B5026E848 /* Pods-PokerEvaluatorTests.release.xcconfig */,
+				F6D30282B80E117FBFA294E3 /* Pods-PokerEvaluatorUITests.debug.xcconfig */,
+				AF5DCDE7668524D7933274BF /* Pods-PokerEvaluatorUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F89DCF6231311C600394DD8 /* PokerEvaluator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F89DD21231311C800394DD8 /* Build configuration list for PBXNativeTarget "PokerEvaluator" */;
+			buildPhases = (
+				AA69301422B29668E77054DA /* [CP] Check Pods Manifest.lock */,
+				3F89DCF3231311C600394DD8 /* Sources */,
+				3F89DCF4231311C600394DD8 /* Frameworks */,
+				3F89DCF5231311C600394DD8 /* Resources */,
+				417BD99BEC620BC29963E9E2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PokerEvaluator;
+			productName = PokerEvaluator;
+			productReference = 3F89DCF7231311C600394DD8 /* PokerEvaluator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F89DD0C231311C800394DD8 /* PokerEvaluatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F89DD24231311C800394DD8 /* Build configuration list for PBXNativeTarget "PokerEvaluatorTests" */;
+			buildPhases = (
+				47639C3EFB41B0B16A5A4B99 /* [CP] Check Pods Manifest.lock */,
+				3F89DD09231311C800394DD8 /* Sources */,
+				3F89DD0A231311C800394DD8 /* Frameworks */,
+				3F89DD0B231311C800394DD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F89DD0F231311C800394DD8 /* PBXTargetDependency */,
+			);
+			name = PokerEvaluatorTests;
+			productName = PokerEvaluatorTests;
+			productReference = 3F89DD0D231311C800394DD8 /* PokerEvaluatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3F89DD17231311C800394DD8 /* PokerEvaluatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F89DD27231311C800394DD8 /* Build configuration list for PBXNativeTarget "PokerEvaluatorUITests" */;
+			buildPhases = (
+				D16587F582734D22D05AD9D9 /* [CP] Check Pods Manifest.lock */,
+				3F89DD14231311C800394DD8 /* Sources */,
+				3F89DD15231311C800394DD8 /* Frameworks */,
+				3F89DD16231311C800394DD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F89DD1A231311C800394DD8 /* PBXTargetDependency */,
+			);
+			name = PokerEvaluatorUITests;
+			productName = PokerEvaluatorUITests;
+			productReference = 3F89DD18231311C800394DD8 /* PokerEvaluatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F89DCEF231311C600394DD8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Joao Paulo Aquino";
+				TargetAttributes = {
+					3F89DCF6231311C600394DD8 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					3F89DD0C231311C800394DD8 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 3F89DCF6231311C600394DD8;
+					};
+					3F89DD17231311C800394DD8 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 3F89DCF6231311C600394DD8;
+					};
+				};
+			};
+			buildConfigurationList = 3F89DCF2231311C600394DD8 /* Build configuration list for PBXProject "PokerEvaluator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F89DCEE231311C600394DD8;
+			productRefGroup = 3F89DCF8231311C600394DD8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F89DCF6231311C600394DD8 /* PokerEvaluator */,
+				3F89DD0C231311C800394DD8 /* PokerEvaluatorTests */,
+				3F89DD17231311C800394DD8 /* PokerEvaluatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F89DCF5231311C600394DD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F89DD07231311C800394DD8 /* LaunchScreen.storyboard in Resources */,
+				3F89DD04231311C800394DD8 /* Assets.xcassets in Resources */,
+				3F89DD02231311C600394DD8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F89DD0B231311C800394DD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F89DD16231311C800394DD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		417BD99BEC620BC29963E9E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PokerEvaluator/Pods-PokerEvaluator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Combinatorics/Combinatorics.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Combinatorics.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokerEvaluator/Pods-PokerEvaluator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47639C3EFB41B0B16A5A4B99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PokerEvaluatorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA69301422B29668E77054DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PokerEvaluator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D16587F582734D22D05AD9D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PokerEvaluatorUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F89DCF3231311C600394DD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F89DD3F23131C1700394DD8 /* SceneDelegate.swift in Sources */,
+				3F89DCFF231311C600394DD8 /* ViewController.swift in Sources */,
+				3F89DD3D23131BB200394DD8 /* Evaluator.swift in Sources */,
+				3F89DCFB231311C600394DD8 /* AppDelegate.swift in Sources */,
+				3F89DD3B23131BA900394DD8 /* Lookups.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F89DD09231311C800394DD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F89DD12231311C800394DD8 /* PokerEvaluatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F89DD14231311C800394DD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F89DD1D231311C800394DD8 /* PokerEvaluatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F89DD0F231311C800394DD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F89DCF6231311C600394DD8 /* PokerEvaluator */;
+			targetProxy = 3F89DD0E231311C800394DD8 /* PBXContainerItemProxy */;
+		};
+		3F89DD1A231311C800394DD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F89DCF6231311C600394DD8 /* PokerEvaluator */;
+			targetProxy = 3F89DD19231311C800394DD8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F89DD00231311C600394DD8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F89DD01231311C600394DD8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F89DD05231311C800394DD8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F89DD06231311C800394DD8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F89DD1F231311C800394DD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F89DD20231311C800394DD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F89DD22231311C800394DD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 040662FFB482EBEF68CF0EE8 /* Pods-PokerEvaluator.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TN75WULY37;
+				INFOPLIST_FILE = PokerEvaluator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.goapps.PokerEvaluator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F89DD23231311C800394DD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCCC6D703A66FF4C8B9F44E1 /* Pods-PokerEvaluator.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TN75WULY37;
+				INFOPLIST_FILE = PokerEvaluator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.goapps.PokerEvaluator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3F89DD25231311C800394DD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 584C2E4BE931FAF6816124D1 /* Pods-PokerEvaluatorTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TN75WULY37;
+				INFOPLIST_FILE = PokerEvaluatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.goapps.PokerEvaluatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokerEvaluator.app/PokerEvaluator";
+			};
+			name = Debug;
+		};
+		3F89DD26231311C800394DD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF901521D05CAC5B5026E848 /* Pods-PokerEvaluatorTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TN75WULY37;
+				INFOPLIST_FILE = PokerEvaluatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.goapps.PokerEvaluatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokerEvaluator.app/PokerEvaluator";
+			};
+			name = Release;
+		};
+		3F89DD28231311C800394DD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6D30282B80E117FBFA294E3 /* Pods-PokerEvaluatorUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TN75WULY37;
+				INFOPLIST_FILE = PokerEvaluatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.goapps.PokerEvaluatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PokerEvaluator;
+			};
+			name = Debug;
+		};
+		3F89DD29231311C800394DD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF5DCDE7668524D7933274BF /* Pods-PokerEvaluatorUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TN75WULY37;
+				INFOPLIST_FILE = PokerEvaluatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.goapps.PokerEvaluatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PokerEvaluator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F89DCF2231311C600394DD8 /* Build configuration list for PBXProject "PokerEvaluator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F89DD1F231311C800394DD8 /* Debug */,
+				3F89DD20231311C800394DD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F89DD21231311C800394DD8 /* Build configuration list for PBXNativeTarget "PokerEvaluator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F89DD22231311C800394DD8 /* Debug */,
+				3F89DD23231311C800394DD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F89DD24231311C800394DD8 /* Build configuration list for PBXNativeTarget "PokerEvaluatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F89DD25231311C800394DD8 /* Debug */,
+				3F89DD26231311C800394DD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F89DD27231311C800394DD8 /* Build configuration list for PBXNativeTarget "PokerEvaluatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F89DD28231311C800394DD8 /* Debug */,
+				3F89DD29231311C800394DD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F89DCEF231311C600394DD8 /* Project object */;
+}
