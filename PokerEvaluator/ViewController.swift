@@ -14,6 +14,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         let hand = Evaluator().evaluate(cards: ["T♣", "J♣", "Q♣", "K♣", "A♦"])
+        let newHand = Evaluator().evaluate7CardHand(cards: ["4♣", "5♦","T♣", "J♦", "A♣", "K♣", "A♦"])
+
+        print("\(newHand.name) \(newHand.rank)")
 
         print("\(hand.name) \(hand.rank)")
     }

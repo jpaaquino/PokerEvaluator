@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combinatorics
 
 public class Deck {
     var cards:[String:Int]
@@ -121,7 +122,26 @@ class Evaluator {
         return HandRank(rank:combinationToRank[combination])
     }
     
-//    func evaluate7CardHand(cards: [String]) -> HandRank {
-//
-//    }
+    func evaluate7CardHand(cards: [String]) -> HandRank {
+        let eval = Evaluator()
+        // All possible ways you can pick 6 numbers out of 6 available.
+        let cs = Combinatorics.combinationsWithoutRepetitionFrom(cards, taking: 5)
+        var lowest: Int?
+        for c in cs {
+            let n = eval.evaluate(cards: c).rank
+            
+            if lowest == nil {
+                lowest = n
+            }
+            
+            if n < lowest! {
+                lowest = n
+            }
+            
+            print(c)
+        }
+
+        print(lowest!)
+        return HandRank(rank: lowest!)
+    }
 }
