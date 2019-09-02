@@ -18,6 +18,10 @@
 		3F89DD3B23131BA900394DD8 /* Lookups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DD3A23131BA900394DD8 /* Lookups.swift */; };
 		3F89DD3D23131BB200394DD8 /* Evaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DD3C23131BB200394DD8 /* Evaluator.swift */; };
 		3F89DD3F23131C1700394DD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DD3E23131C1700394DD8 /* SceneDelegate.swift */; };
+		3F89DD45231339AB00394DD8 /* CardsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F89DD44231339AB00394DD8 /* CardsView.xib */; };
+		3F89DD47231347E700394DD8 /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DD46231347E700394DD8 /* CardsView.swift */; };
+		3F89DD49231C7E7A00394DD8 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DD48231C7E7A00394DD8 /* Cards.swift */; };
+		3F89DD4B231C803000394DD8 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89DD4A231C803000394DD8 /* Array+Utils.swift */; };
 		A83F29A90E5D659A4F5B876F /* Pods_PokerEvaluatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0582B957F0200FFA54D40AEC /* Pods_PokerEvaluatorTests.framework */; };
 		D077F2FB14D164E8C0A468DE /* Pods_PokerEvaluatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 567555D7F3F86210B7299A5F /* Pods_PokerEvaluatorUITests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +62,10 @@
 		3F89DD3A23131BA900394DD8 /* Lookups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lookups.swift; sourceTree = "<group>"; };
 		3F89DD3C23131BB200394DD8 /* Evaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evaluator.swift; sourceTree = "<group>"; };
 		3F89DD3E23131C1700394DD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3F89DD44231339AB00394DD8 /* CardsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsView.xib; sourceTree = "<group>"; };
+		3F89DD46231347E700394DD8 /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
+		3F89DD48231C7E7A00394DD8 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		3F89DD4A231C803000394DD8 /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		567555D7F3F86210B7299A5F /* Pods_PokerEvaluatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokerEvaluatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		584C2E4BE931FAF6816124D1 /* Pods-PokerEvaluatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerEvaluatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokerEvaluatorTests/Pods-PokerEvaluatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE8FD263F16270249EBDFED0 /* Pods_PokerEvaluator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokerEvaluator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +147,10 @@
 				3F89DD03231311C800394DD8 /* Assets.xcassets */,
 				3F89DD05231311C800394DD8 /* LaunchScreen.storyboard */,
 				3F89DD08231311C800394DD8 /* Info.plist */,
+				3F89DD44231339AB00394DD8 /* CardsView.xib */,
+				3F89DD46231347E700394DD8 /* CardsView.swift */,
+				3F89DD48231C7E7A00394DD8 /* Cards.swift */,
+				3F89DD4A231C803000394DD8 /* Array+Utils.swift */,
 			);
 			path = PokerEvaluator;
 			sourceTree = "<group>";
@@ -284,6 +296,7 @@
 			files = (
 				3F89DD07231311C800394DD8 /* LaunchScreen.storyboard in Resources */,
 				3F89DD04231311C800394DD8 /* Assets.xcassets in Resources */,
+				3F89DD45231339AB00394DD8 /* CardsView.xib in Resources */,
 				3F89DD02231311C600394DD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,12 +328,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PokerEvaluator/Pods-PokerEvaluator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Combinatorics/Combinatorics.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Combinatorics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -400,11 +415,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F89DD47231347E700394DD8 /* CardsView.swift in Sources */,
 				3F89DD3F23131C1700394DD8 /* SceneDelegate.swift in Sources */,
 				3F89DCFF231311C600394DD8 /* ViewController.swift in Sources */,
+				3F89DD49231C7E7A00394DD8 /* Cards.swift in Sources */,
 				3F89DD3D23131BB200394DD8 /* Evaluator.swift in Sources */,
 				3F89DCFB231311C600394DD8 /* AppDelegate.swift in Sources */,
 				3F89DD3B23131BA900394DD8 /* Lookups.swift in Sources */,
+				3F89DD4B231C803000394DD8 /* Array+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

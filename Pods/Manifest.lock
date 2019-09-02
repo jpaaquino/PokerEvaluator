@@ -1,16 +1,22 @@
 PODS:
   - Combinatorics (1.4)
+  - SwiftMessages (7.0.0):
+    - SwiftMessages/App (= 7.0.0)
+  - SwiftMessages/App (7.0.0)
 
 DEPENDENCIES:
   - Combinatorics
+  - SwiftMessages
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Combinatorics
+    - SwiftMessages
 
 SPEC CHECKSUMS:
   Combinatorics: 890b1bc586642f25f81c2274572295c1fe3a6460
+  SwiftMessages: a952f7a9103d9aeab93730a2861d2d8fcdd8758f
 
-PODFILE CHECKSUM: cd16e634ffb288cecdf175b0df52cd03a9bc69e4
+PODFILE CHECKSUM: 6789be5e6390769c94063351abc2299db16580d1
 
 COCOAPODS: 1.5.3

@@ -9,6 +9,151 @@
 import Foundation
 import Combinatorics
 
+class Shuffler {
+    
+    static func suitForIntValue(_ intValue: Int) -> Suit {
+        switch intValue {
+        case 1 ... 13:
+            return .spades
+        case 14 ... 26:
+            return .diamonds
+        case 27 ... 39:
+            return .hearts
+        case 40 ... 52:
+            return .clubs
+        default:
+            fatalError("intValue \(intValue) not mapped to any suit")
+        }
+    }
+    
+    static func valueForIntValue(_ value: Int) -> CardValue {
+        let remainder = value % 13
+        switch remainder {
+        case 1:
+            return .ace
+        case 2:
+            return .two
+        case 3:
+            return .three
+        case 4:
+            return .four
+        case 5:
+            return .five
+        case 6:
+            return .six
+        case 7:
+            return .seven
+        case 8:
+            return .eight
+        case 9:
+            return .nine
+        case 10:
+            return .ten
+        case 11:
+            return .jack
+        case 12:
+            return .queen
+        case 0:
+            return .king
+        default:
+            fatalError("Invalid value cardForIntValue \(remainder)")
+        }
+    }
+    
+    static func getRandomCard(excludingCards: [Card]) -> Card {
+        
+        var cards = Cards.all
+        
+        for card in excludingCards {
+            cards.remove(object: card)
+        }
+        
+        let randomInt = Int.random(in: 0...cards.count - 1)
+        return cards[randomInt]
+    }
+    
+}
+
+class Card: Equatable {
+    
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        return lhs.suit == rhs.suit && lhs.value == rhs.value
+    }
+    
+    init(_ value: CardValue,_ suit: Suit) {
+        self.suit = suit
+        self.value = value
+    }
+    
+    convenience init(stringFormat: String) {
+        let value = String(stringFormat.prefix(1))
+        let suit = stringFormat.suffix(1)
+        
+        self.init(CardValue(rawValue: value)!,Suit(rawValue: String(suit))!)
+    }
+    
+    convenience init(intValue: Int) {
+        
+        let suit: Suit = Shuffler.suitForIntValue(intValue)
+        
+        let value: CardValue = Shuffler.valueForIntValue(intValue)
+        
+        self.init(value,suit)
+
+    }
+    
+    let value: CardValue
+    let suit: Suit
+    
+    var stringFormat: String {
+        return value.rawValue + suit.rawValue
+    }
+    
+    var image: UIImage? {
+        let imageName = value.rawValue + suit.letterRepresentation
+        return UIImage(named: imageName)
+    }
+    
+}
+
+enum Suit: String {
+    case spades = "♠"
+    case diamonds = "♦"
+    case hearts = "♥"
+    case clubs = "♣"
+    
+    var letterRepresentation: String {
+        switch self {
+        case .spades:
+            return "S"
+        case .diamonds:
+            return "D"
+        case .hearts:
+            return "H"
+        case .clubs:
+            return "C"
+        }
+    }
+}
+
+enum CardValue: String {
+    case ace = "A"
+    case two = "2"
+    case three = "3"
+    case four = "4"
+    case five = "5"
+    case six = "6"
+    case seven = "7"
+    case eight = "8"
+    case nine = "9"
+    case ten = "T"
+    case jack = "J"
+    case queen = "Q"
+    case king = "K"
+    
+}
+
+
 public class Deck {
     var cards:[String:Int]
     var count: Int {
@@ -96,8 +241,10 @@ func == (lhs: HandRank, rhs: HandRank) -> Bool {
 class Evaluator {
     var deck = Deck()
     
-    func evaluate(cards:[String]) -> HandRank {
-        let cardValues = cards.map { self.deck.as_binary(card: $0) }
+    func evaluate(cards:[Card]) -> HandRank {
+        
+        let cardsStrings = cards.map {$0.stringFormat}
+        let cardValues = cardsStrings.map { self.deck.as_binary(card: $0) }
 
         let handIndex = cardValues.reduce(0,|) >> 16
 
@@ -122,9 +269,10 @@ class Evaluator {
         return HandRank(rank:combinationToRank[combination])
     }
     
-    func evaluate7CardHand(cards: [String]) -> HandRank {
+    func evaluate7CardHand(cards: [Card]) -> HandRank {
+
         let eval = Evaluator()
-        // All possible ways you can pick 6 numbers out of 6 available.
+        
         let cs = Combinatorics.combinationsWithoutRepetitionFrom(cards, taking: 5)
         var lowest: Int?
         for c in cs {

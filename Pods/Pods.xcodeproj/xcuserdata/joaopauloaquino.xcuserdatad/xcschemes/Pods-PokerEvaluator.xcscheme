@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8BC2960BC681503A28623C4491B46A39"
+               BlueprintIdentifier = "94045A9E332C3D23C37B0FBD068BCDB7"
                BuildableName = "Pods_PokerEvaluator.framework"
                BlueprintName = "Pods-PokerEvaluator"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -8,6 +8,7 @@ target 'PokerEvaluator' do
   # Pods for PokerEvaluator
 
 pod 'Combinatorics'
+pod 'SwiftMessages'
 
 
   target 'PokerEvaluatorTests' do
