@@ -243,8 +243,8 @@ class Evaluator {
     
     func evaluate(cards:[Card]) -> HandRank {
         
-        let cardsStrings = cards.map {$0.stringFormat}
-        let cardValues = cardsStrings.map { self.deck.as_binary(card: $0) }
+        //let cardsStrings = cards.map {$0.stringFormat}
+        let cardValues = cards.map { self.deck.as_binary(card: $0.stringFormat) }
 
         let handIndex = cardValues.reduce(0,|) >> 16
 
@@ -286,10 +286,8 @@ class Evaluator {
                 lowest = n
             }
             
-            print(c)
         }
 
-        print(lowest!)
         return HandRank(rank: lowest!)
     }
 }

@@ -18,14 +18,14 @@ class ViewController: UIViewController {
         let hand1 = [
             Card(.ten, .diamonds),
             Card(.ten, .clubs),
-            Card(.ten, .spades),
-            Card(.ace, .diamonds)
+
         ]
         
         let hand2 = [
             Card(.ace, .clubs),
             Card(.ace, .spades)
         ]
+        
 
         simulate5CardDraw(numberOfSims: 1000, hands: [hand1,hand2])
 
@@ -34,26 +34,27 @@ class ViewController: UIViewController {
     
     func simulate5CardDraw(numberOfSims: Int, hands: [[Card]]) {
         var arrayOfWins:[Int] = Array(repeating: 0, count: hands.count)
-        
+        let start = Date()
+        let excluding = hands.flatMap {$0}
+
         //For every simulation
         for _ in 1 ... numberOfSims {
          
             //best value in simulation
             var bestIndex = 0
-            var bestHand: HandRank?
              var bestValue: Int?
 
         //Excluded cards = existing cards in players hands
-        var excluding = hands.flatMap {$0}
-        
+        var newExcluding = excluding
+            
             // for each players hands
             for (index, var newHand) in hands.enumerated() {
              
          //Simulate remaining cards in player's hands
         while newHand.count < 5 {
-            let newCard = Shuffler.getRandomCard(excludingCards: excluding)
+            let newCard = Shuffler.getRandomCard(excludingCards: newExcluding)
             newHand.append(newCard)
-            excluding.append(newCard)
+            newExcluding.append(newCard)
         }
          
         //Hand value for player
@@ -62,12 +63,10 @@ class ViewController: UIViewController {
                 if(bestValue == nil) {
                     bestValue = newHandValue.rank
                     bestIndex = index
-                    bestHand = newHandValue
                 } else {
                     if(newHandValue.rank < bestValue!) {
                       bestValue = newHandValue.rank
                         bestIndex = index
-                        bestHand = newHandValue
                     }
                 }
 
@@ -77,6 +76,10 @@ class ViewController: UIViewController {
 
             
         }
+        
+        let elapsedTime = Date().timeIntervalSince(start)
+        print("elapsedTime \(elapsedTime)")
+        
         for (index, value) in arrayOfWins.enumerated() {
             print("Seat \(index) wins \(value) times")
         }
