@@ -1,16 +1,16 @@
 //
-//  Cards.swift
+//  Cards+spades.swift
 //  PokerEvaluator
 //
-//  Created by Joao Paulo Aquino on 01/09/19.
+//  Created by Joao Paulo Aquino on 02/09/19.
 //  Copyright © 2019 Joao Paulo Aquino. All rights reserved.
 //
 
 import Foundation
 
-class Cards {
+extension Cards {
     
-    static var all = [
+    static let spades = [
         Card(.ace, .spades),
         Card(.two, .spades),
         Card(.three, .spades),
@@ -23,7 +23,11 @@ class Cards {
         Card(.ten, .spades),
         Card(.jack, .spades),
         Card(.queen, .spades),
-        Card(.king, .spades),
+        Card(.king, .spades)
+    ]
+    
+    static let diamonds = [
+        
         Card(.ace, .diamonds),
         Card(.two, .diamonds),
         Card(.three, .diamonds),
@@ -36,7 +40,10 @@ class Cards {
         Card(.ten, .diamonds),
         Card(.jack, .diamonds),
         Card(.queen, .diamonds),
-        Card(.king, .diamonds),
+        Card(.king, .diamonds)
+    ]
+    
+    static let hearts = [
         Card(.ace, .hearts),
         Card(.two, .hearts),
         Card(.three, .hearts),
@@ -49,7 +56,10 @@ class Cards {
         Card(.ten, .hearts),
         Card(.jack, .hearts),
         Card(.queen, .hearts),
-        Card(.king, .hearts),
+        Card(.king, .hearts)
+    ]
+    
+    static let clubs = [
         Card(.ace, .clubs),
         Card(.two, .clubs),
         Card(.three, .clubs),
@@ -62,11 +72,8 @@ class Cards {
         Card(.ten, .clubs),
         Card(.jack, .clubs),
         Card(.queen, .clubs),
-        Card(.king, .clubs),
+        Card(.king, .clubs)
     ]
-    
-    
-    
     
     
 }

@@ -269,14 +269,19 @@ class Evaluator {
         return HandRank(rank:combinationToRank[combination])
     }
     
+    
     func evaluate7CardHand(cards: [Card]) -> HandRank {
 
         let eval = Evaluator()
-        
-        let cs = Combinatorics.combinationsWithoutRepetitionFrom(cards, taking: 5)
+
+        let combos = Combinatorics.combinationsWithoutRepetitionFrom(cards, taking: 5)
+
+
         var lowest: Int?
-        for c in cs {
-            let n = eval.evaluate(cards: c).rank
+        for combo in combos {
+
+            
+            let n = eval.evaluate(cards: combo).rank
             
             if lowest == nil {
                 lowest = n
@@ -290,4 +295,7 @@ class Evaluator {
 
         return HandRank(rank: lowest!)
     }
+
+    
+
 }

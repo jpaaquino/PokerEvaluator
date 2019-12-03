@@ -9,7 +9,7 @@ DEPENDENCIES:
   - SwiftMessages
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Combinatorics
     - SwiftMessages
 
@@ -19,4 +19,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 6789be5e6390769c94063351abc2299db16580d1
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.3
