@@ -114,6 +114,21 @@ class Card: Equatable {
         return UIImage(named: imageName)
     }
     
+    var numberValue: Int {
+        switch value {
+        case .ace:
+            return 1
+        case .two, .three, .four,.five,.six,.seven,.eight,.nine,.ten:
+            return Int(value.rawValue)!
+        case .jack:
+            return 11
+        case .queen:
+            return 12
+        case .king:
+            return 13
+        }
+    }
+    
 }
 
 enum Suit: String {
@@ -276,10 +291,8 @@ class Evaluator {
 
         let combos = Combinatorics.combinationsWithoutRepetitionFrom(cards, taking: 5)
 
-
         var lowest: Int?
         for combo in combos {
-
             
             let n = eval.evaluate(cards: combo).rank
             
@@ -296,6 +309,5 @@ class Evaluator {
         return HandRank(rank: lowest!)
     }
 
-    
 
 }
