@@ -155,7 +155,7 @@ class ViewController: UIViewController, ChooseCardViewControllerDelegate {
     func simulate(board:[Card], hands:[[Card]]) {
 
         if game == .fiveCardDraw {
-        let result = Simulator.simulate5CardDraw(numberOfSims: 1000, hands: hands)
+        let result = Simulator.simulate5CardDraw(numberOfSims: 5000, hands: hands)
         printResult(wins: result)
 
         } else {

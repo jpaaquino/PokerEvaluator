@@ -205,13 +205,12 @@ class Simulator {
             var bestHandRank: RankName?
 
             for (index, newHand) in hands.enumerated() {
-                var allCards = newHand + board + combo
+                let allCards = newHand + board + combo
 
                 let newRank = Evaluator().eval7Cards(cards: newHand + board + combo)
                 for allC in allCards {
                     print(allC.stringFormat)
                 }
-                print(newRank)
                 
                 if(bestHandRank == nil) {
                     bestHandRank = newRank
@@ -270,7 +269,7 @@ class Simulator {
         let excluding = hands.flatMap {$0}
         
         //For every simulation
-        for _ in 1 ... numberOfSims {
+        outerloop: for _ in 1 ... numberOfSims {
             
             //best value in simulation
             var bestIndex = [0]
