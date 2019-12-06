@@ -49,7 +49,7 @@ class ViewController: UIViewController, ChooseCardViewControllerDelegate {
     
     var hand1: [Card] = [Card(.ace, .spades), Card(.king, .spades)]
     var hand2: [Card] = [Card(.five, .spades), Card(.five, .diamonds)]
-    var board = [Card]()
+    var board = [Card(.ten, .spades), Card(.jack, .spades), Card(.two, .diamonds) ]
     
     @IBOutlet weak var resultLabel: UILabel!
     
@@ -153,9 +153,6 @@ class ViewController: UIViewController, ChooseCardViewControllerDelegate {
     }
     
     func simulate(board:[Card], hands:[[Card]]) {
-        let result = Evaluator().eval7Cards(cards: board + hands[0] + hands[1])
-        print(result)
-        return
 
         if game == .fiveCardDraw {
         let result = Simulator.simulate5CardDraw(numberOfSims: 1000, hands: hands)

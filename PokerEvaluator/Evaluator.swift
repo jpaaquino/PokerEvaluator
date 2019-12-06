@@ -131,6 +131,8 @@ class Card: Equatable {
         }
     }
     
+    
+    
 }
 
 enum Suit: String {
@@ -335,8 +337,28 @@ class Evaluator {
 }
 
 extension Evaluator {
-    func isFlush(cards: [Card]) -> Bool {
-        return cards.filter{$0.suit == cards[0].suit}.count >= 5
+    func isFlush(cards: [Card]) -> (Bool, Suit?) {
+        let spades = cards.filter{$0.suit == .spades}
+        let diamonds = cards.filter{$0.suit == .diamonds}
+        let hearts = cards.filter{$0.suit == .hearts}
+        let clubs = cards.filter{$0.suit == .clubs}
+        
+        if spades.count >= 5 {
+            return (true, .spades)
+        }
+        
+        if diamonds.count >= 5 {
+            return (true, .diamonds)
+        }
+        
+        if hearts.count >= 5 {
+            return (true, .hearts)
+        }
+        if clubs.count >= 5 {
+            return (true, .clubs)
+        }
+
+        return (false, nil)
     }
     
     func retrieveSetOfCards(cards: [Card]) -> Set<Int> {
@@ -377,10 +399,10 @@ extension Evaluator {
         switch set.count {
         case 5:
             let isStraight = self.isItAStraight(set: set)
-            if(flush && isStraight){return .StraightFlush}
-            else if(flush && !isStraight){return .Flush}
-            else if(!flush && isStraight){return .Straight}
-            else if(!flush && !isStraight){return .HighCard}
+            if(flush.0 && isStraight){return .StraightFlush}
+            else if(flush.0 && !isStraight){return .Flush}
+            else if(!flush.0 && isStraight){return .Straight}
+            else if(!flush.0 && !isStraight){return .HighCard}
         case 4:
             return .OnePair
         case 3:
@@ -403,8 +425,9 @@ extension Evaluator {
         let straight = isStraight7Card(cards: cards)
         let mostRepeated = twoMostRepeated(cards: cards)
         
-        if straight && flush {
-            if isStraightFlush7Card(cards: cards) {
+        if straight && flush.0 {
+            let newCards = cards.filter {$0.suit == flush.1}
+            if isStraightFlush7Card(cards: newCards) {
                 return .StraightFlush
             }
         }
@@ -415,23 +438,23 @@ extension Evaluator {
         case (3, 2...3):
             return .FullHouse
         case (3, 1):
-            if flush {return .Flush}
+            if flush.0 {return .Flush}
             if straight {return .Straight}
             return .ThreeOfAKind
         case (2, 2):
-            if flush {return .Flush}
+            if flush.0 {return .Flush}
             if straight {return .Straight}
             return .TwoPairs
         case (2, 1):
-            if flush {return .Flush}
+            if flush.0 {return .Flush}
             if straight {return .Straight}
             return .OnePair
         case (1, 1):
-            if flush {return .Flush}
+            if flush.0 {return .Flush}
             if straight {return .Straight}
             return .HighCard
         default:
-            if flush {return .Flush}
+            if flush.0 {return .Flush}
             if straight {return .Straight}
             print("Default")
             return .HighCard
@@ -445,18 +468,22 @@ extension Evaluator {
         var previous:Int?
         let newCards = cards.sorted(by: { $0.numberValue < $1.numberValue })
         var count = 0
-        for card in newCards {
-            if (card.numberValue == 13 && newCards.first!.numberValue == 1) {
-            count += 2
-            if count >= 5 { return true }
-            }
-            else if previous == nil || previous == card.numberValue - 1 {
+        var cardsNumbers = newCards.map {$0.numberValue}
+        if cardsNumbers.contains(1){
+            cardsNumbers.append(14)
+        }
+        for cardNumber in cardsNumbers {
+            
+            if previous == nil || previous == cardNumber - 1 {
             count += 1
-            previous = card.numberValue
+            previous = cardNumber
                 if count >= 5 { return true }
-            } else {
+            } else if previous == cardNumber  {
+            previous = cardNumber
+                if count >= 5 { return true }
+            }else {
                 count = 1
-                previous = card.numberValue
+                previous = cardNumber
             }
             
         }
@@ -467,14 +494,15 @@ extension Evaluator {
         var previous:Card?
         let newCards = cards.sorted(by: { $0.numberValue < $1.numberValue })
         var count = 0
+        
         for card in newCards {
-            if (card.numberValue == 13 && newCards.first!.numberValue == 1 && card.suit == newCards.first!.suit) {
-                       count += 2
-                       if count >= 5 { return true }
-            }
-            else if previous == nil || (previous!.numberValue == card.numberValue - 1 && previous!.suit == card.suit) {
+            if previous == nil || (previous!.numberValue + 1 == card.numberValue && previous!.suit == card.suit) {
              count += 1
             previous = card
+                
+                if count == 4 && card.numberValue == 13 && newCards.contains(Card(.ace, card.suit)) {
+                    return true
+                }
                 if count >= 5 {return true}
             } else {
                 count = 1
