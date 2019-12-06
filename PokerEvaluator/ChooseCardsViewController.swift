@@ -19,7 +19,7 @@ class ChooseCardsViewController: UIViewController, UICollectionViewDelegate, UIC
     var cards: [Card?] = []
     
     var spades: [Card?] {
-        return [Card?](cards[0...13])
+        return [Card?](cards[0...12])
     }
     
     var diamonds: [Card?] {

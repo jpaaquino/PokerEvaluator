@@ -118,8 +118,10 @@ class Card: Equatable {
         switch value {
         case .ace:
             return 1
-        case .two, .three, .four,.five,.six,.seven,.eight,.nine,.ten:
+        case .two, .three, .four,.five,.six,.seven,.eight,.nine:
             return Int(value.rawValue)!
+        case .ten:
+             return 10
         case .jack:
             return 11
         case .queen:
@@ -214,8 +216,8 @@ public class Deck {
     }
 }
 
-enum RankName{
-    case HighCard
+enum RankName: Int{
+    case HighCard = 0
     case OnePair
     case TwoPairs
     case ThreeOfAKind
@@ -295,6 +297,8 @@ class Evaluator {
         for combo in combos {
             
             let n = eval.evaluate(cards: combo).rank
+            //let n = eval.eval(cards: combo).rawValue
+
             
             if lowest == nil {
                 lowest = n
@@ -308,6 +312,192 @@ class Evaluator {
 
         return HandRank(rank: lowest!)
     }
+    
+    func getHandRank(cards: [Card]) -> RankName {
 
+         let eval = Evaluator()
 
+         let combos = Combinatorics.combinationsWithoutRepetitionFrom(cards, taking: 5)
+
+        var highest: RankName = .HighCard
+         for combo in combos {
+             
+            let rankName = eval.eval(cards: combo)
+             
+            if rankName.rawValue > highest.rawValue {
+                 highest = rankName
+             }
+         }
+
+         return highest
+     }
+    
+}
+
+extension Evaluator {
+    func isFlush(cards: [Card]) -> Bool {
+        return cards.filter{$0.suit == cards[0].suit}.count >= 5
+    }
+    
+    func retrieveSetOfCards(cards: [Card]) -> Set<Int> {
+        var set = Set<Int>()
+        for card in cards {
+            set.insert(card.numberValue)
+        }
+        return set
+    }
+    
+    private func isItAStraight(set: Set<Int>) -> Bool {
+        if(set.count != 5){return false}
+        
+        if(set.max()! - set.min()! == 4){
+            return true
+        } else if(set.contains(14)){
+            if(set == [14,5,4,3,2]){return true}
+        }
+        return false
+    }
+    
+    
+    func eval(cards: [Card]) -> RankName {
+        let set = retrieveSetOfCards(cards: cards)
+        
+        var arrayOfValues:[Int] = []
+        
+        for card in cards{
+            arrayOfValues.append(card.numberValue)
+        }
+        
+        var counts = [Int: Int]()
+        arrayOfValues.forEach { counts[$0] = (counts[$0] ?? 0) + 1 }
+        let (_, mostRepeatedCount) = counts.max(by: {$0.1 < $1.1})!
+        
+        let flush = isFlush(cards: cards)
+        
+        switch set.count {
+        case 5:
+            let isStraight = self.isItAStraight(set: set)
+            if(flush && isStraight){return .StraightFlush}
+            else if(flush && !isStraight){return .Flush}
+            else if(!flush && isStraight){return .Straight}
+            else if(!flush && !isStraight){return .HighCard}
+        case 4:
+            return .OnePair
+        case 3:
+            if(mostRepeatedCount == 3){return .ThreeOfAKind}
+            else if(mostRepeatedCount == 2){return .TwoPairs}
+        case 2:
+            if(mostRepeatedCount == 3){return .FullHouse}
+            else if(mostRepeatedCount == 4){return .FourOfAKind}
+        default:
+            print("Error hand not recognized")
+
+            return .HighCard
+        }
+        return .HighCard
+
+    }
+    
+    func eval7Cards(cards: [Card]) -> RankName {
+        let flush = isFlush(cards: cards)
+        let straight = isStraight7Card(cards: cards)
+        let mostRepeated = twoMostRepeated(cards: cards)
+        
+        if straight && flush {
+            if isStraightFlush7Card(cards: cards) {
+                return .StraightFlush
+            }
+        }
+        
+        switch mostRepeated {
+        case (4, 1...3):
+            return .FourOfAKind
+        case (3, 2...3):
+            return .FullHouse
+        case (3, 1):
+            if flush {return .Flush}
+            if straight {return .Straight}
+            return .ThreeOfAKind
+        case (2, 2):
+            if flush {return .Flush}
+            if straight {return .Straight}
+            return .TwoPairs
+        case (2, 1):
+            if flush {return .Flush}
+            if straight {return .Straight}
+            return .OnePair
+        case (1, 1):
+            if flush {return .Flush}
+            if straight {return .Straight}
+            return .HighCard
+        default:
+            if flush {return .Flush}
+            if straight {return .Straight}
+            print("Default")
+            return .HighCard
+
+        }
+        
+        
+    }
+    
+    func isStraight7Card(cards: [Card]) -> Bool {
+        var previous:Int?
+        let newCards = cards.sorted(by: { $0.numberValue < $1.numberValue })
+        var count = 0
+        for card in newCards {
+            if (card.numberValue == 13 && newCards.first!.numberValue == 1) {
+            count += 2
+            if count >= 5 { return true }
+            }
+            else if previous == nil || previous == card.numberValue - 1 {
+            count += 1
+            previous = card.numberValue
+                if count >= 5 { return true }
+            } else {
+                count = 1
+                previous = card.numberValue
+            }
+            
+        }
+        return false
+    }
+    
+    func isStraightFlush7Card(cards: [Card]) -> Bool {
+        var previous:Card?
+        let newCards = cards.sorted(by: { $0.numberValue < $1.numberValue })
+        var count = 0
+        for card in newCards {
+            if (card.numberValue == 13 && newCards.first!.numberValue == 1 && card.suit == newCards.first!.suit) {
+                       count += 2
+                       if count >= 5 { return true }
+            }
+            else if previous == nil || (previous!.numberValue == card.numberValue - 1 && previous!.suit == card.suit) {
+             count += 1
+            previous = card
+                if count >= 5 {return true}
+            } else {
+                count = 1
+                previous = card
+            }
+            
+        }
+        return false
+    }
+    
+    func twoMostRepeated(cards: [Card]) -> (Int, Int) {
+        var dict: [Int: Int] = [:]
+        for card in cards {
+            if let current = dict[card.numberValue] {
+                dict[card.numberValue] = current + 1
+            } else {
+              dict[card.numberValue] =  1
+            }
+        }
+        
+        var arr = [Int](dict.values)
+        arr = arr.sorted(by: { $0 > $1 })
+        return (arr[0], arr[1])
+        
+    }
 }
